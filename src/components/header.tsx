@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Image } from "@unpic/react";
 import LogoImage from "/public/image.webp?url";
 import XLogo from "/public/x-logo.svg?url";
+import InstagramLogo from "/public/Instagram-logo.svg?url";
 
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -85,19 +86,20 @@ const Header: React.FC = () => {
         >
           Contact
         </a>
-          <div className="w-20 h-20">
-            <Image
-              src={LogoImage}
-              alt="Astronomy Christmas"
-              layout="fullWidth"
-              className="object-contain"
-            />
-          </div>
+        <div className="w-20 h-20">
+          <Image
+            src={LogoImage}
+            alt="Astronomy Christmas"
+            layout="fullWidth"
+            className="object-contain"
+          />
+        </div>
+        <div className="flex space-x-4 mt-5">
           <a
             href="https://x.com/nitic_astronomy"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-12 h-12 mb-5"
+            className="w-12 h-12 pt-1"
           >
             <Image
               src={XLogo}
@@ -106,6 +108,20 @@ const Header: React.FC = () => {
               className="object-contain"
             />
           </a>
+          <a
+            href="https://www.instagram.com/nitic_astronomy/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-14 h-14"
+          >
+            <Image
+              src={InstagramLogo}
+              alt="Instagram"
+              layout="fullWidth"
+              className="object-contain"
+            />
+          </a>
+        </div>
       </nav>
     </header>
   );
