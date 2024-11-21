@@ -1,40 +1,41 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import AstroChristmasBackground from "../../components/AstroChristmasBackground";
+import Image from "astro:assets";
 
 const events = [
-    {
-      title: "バナナハンマー実験",
-      description: "液体窒素で凍らせたバナナで釘を打ちます",
-      image: "/images/banana-hammer.jpg",
-    },
-    {
-      title: "液体酸素の神秘",
-      description: "気体の酸素が青い液体に変化する様子を観察します",
-      image: "/images/liquid-oxygen.jpg",
-    },
-    {
-      title: "風船の縮小実験",
-      description: "液体窒素で風船が縮む不思議な現象を体験",
-      image: "/images/balloon-nitrogen.jpg",
-    },
-    {
-      title: "LED色変化実験",
-      description: "極低温でLEDの発光色が変化する様子を観察",
-      image: "/images/led-nitrogen.jpg",
-    },
-    {
-      title: "象の歯磨き粉実験",
-      description: "過酸化水素の分解で大量の泡を作り出す実験",
-      image: "/images/elephant-toothpaste.jpg",
-    },
-  ];
+  {
+    title: "バナナハンマー実験",
+    description: "液体窒素で凍らせたバナナで釘を打ちます",
+    image: "/images/banana-hammer.jpg",
+  },
+  {
+    title: "液体酸素の神秘",
+    description: "気体の酸素が青い液体に変化する様子を観察します",
+    image: "/images/liquid-oxygen.jpg",
+  },
+  {
+    title: "風船の縮小実験",
+    description: "液体窒素で風船が縮む不思議な現象を体験",
+    image: "/images/balloon-nitrogen.jpg",
+  },
+  {
+    title: "LED色変化実験",
+    description: "極低温でLEDの発光色が変化する様子を観察",
+    image: "/images/led-nitrogen.jpg",
+  },
+  {
+    title: "象の歯磨き粉実験",
+    description: "過酸化水素の分解で大量の泡を作り出す実験",
+    image: "/images/elephant-toothpaste.jpg",
+  },
+];
 ---
 
 <Layout title="クリスマスイベントアイデア">
   <AstroChristmasBackground client:only>
-    <main class="container mx-auto px-4 py-8">
-      <h1 class="text-4xl font-bold text-center mb-8 gradient-text text-white">
+    <main class="container mx-auto px-4 py-8 overflow-auto">
+      <h1 class="text-2xl font-bold text-center mb-8 gradient-text text-white">
         🎄 サイエンスショー 🎄
       </h1>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -49,7 +50,8 @@ const events = [
               <h2 class="text-xl font-bold mt-4">
                 <span class="bg-gradient-to-r from-red-500 to-green-500 bg-clip-text text-transparent">
                   {event.title}
-                </span> 🎁
+                </span>{" "}
+                🎁
               </h2>
               <p class="mt-2 text-gray-700">{event.description}</p>
             </div>
@@ -65,6 +67,4 @@ const events = [
   }
 </style>
 
-<script>
-
-</script>
+<script></script>
