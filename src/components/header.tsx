@@ -80,12 +80,6 @@ const Header: React.FC = () => {
         >
           Event
         </a>
-        <a
-          href="/contact"
-          className="text-white no-underline text-2xl transition-colors duration-300 hover:text-blue-400"
-        >
-          Contact
-        </a>
         <div className="w-20 h-20">
           <Image
             src={LogoImage}

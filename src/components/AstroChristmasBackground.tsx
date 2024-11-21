@@ -61,7 +61,7 @@ const AstroChristmasBackground: React.FC<{ children: React.ReactNode }> = ({ chi
                     />
                 ))}
                 {/* Northern Lights Effect */}
-                <div className="absolute inset-0 bg-gradient-to-t from-transparent via-green-500/5 to-transparent animate-aurora" />
+                <div className="absolute inset-0 bg-gradient-to-t from-green-500 to-transparent animate-aurora" />
                 {/* Christmas Tree Constellation */}
                 <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
                     <svg width="200" height="300" className="opacity-40">

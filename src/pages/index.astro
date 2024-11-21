@@ -3,9 +3,34 @@ import Layout from "../layouts/Layout.astro";
 import AstroChristmasBackground from "../components/AstroChristmasBackground";
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="天文部のクリスマスサイエンスショーへようこそ！">
   <AstroChristmasBackground client:only>
-    <div></div>
+    <div class="container mx-auto px-4 py-10">
+      <body class="bg-gray-100 text-gray-900">
+        <main class="p-4">
+          <section class="bg-white shadow-md rounded-lg p-6 mb-4">
+            <h2 class="text-2xl font-semibold mb-2">イベント詳細</h2>
+            <p class="mb-4">
+              このクリスマスサイエンスショーでは、最新の天文学の発見や驚くべき実験を紹介します。家族みんなで楽しめる内容です。
+            </p>
+            <ul class="list-disc list-inside">
+              <li>日時: 2023年12月24日 18:00〜20:00</li>
+              <li>場所: 茨城工業高等専門学校 天文部</li>
+              <li>参加費: 無料</li>
+            </ul>
+          </section>
+          <section class="bg-white shadow-md rounded-lg p-6">
+            <h2 class="text-2xl font-semibold mb-2">プログラム</h2>
+            <ol class="list-decimal list-inside">
+              <li>オープニングセレモニー</li>
+              <li>天文学講演</li>
+              <li>天体観測セッション</li>
+              <li>クリスマス特別実験ショー</li>
+              <li>クローズングセレモニー</li>
+            </ol>
+          </section>
+        </main>
+      </body>
+    </div>
   </AstroChristmasBackground>
-  <div></div>
 </Layout>

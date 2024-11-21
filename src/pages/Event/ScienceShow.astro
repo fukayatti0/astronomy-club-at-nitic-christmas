@@ -1,35 +1,70 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import AstroChristmasBackground from "../../components/AstroChristmasBackground";
+
+const events = [
+    {
+      title: "バナナハンマー実験",
+      description: "液体窒素で凍らせたバナナで釘を打ちます",
+      image: "/images/banana-hammer.jpg",
+    },
+    {
+      title: "液体酸素の神秘",
+      description: "気体の酸素が青い液体に変化する様子を観察します",
+      image: "/images/liquid-oxygen.jpg",
+    },
+    {
+      title: "風船の縮小実験",
+      description: "液体窒素で風船が縮む不思議な現象を体験",
+      image: "/images/balloon-nitrogen.jpg",
+    },
+    {
+      title: "LED色変化実験",
+      description: "極低温でLEDの発光色が変化する様子を観察",
+      image: "/images/led-nitrogen.jpg",
+    },
+    {
+      title: "象の歯磨き粉実験",
+      description: "過酸化水素の分解で大量の泡を作り出す実験",
+      image: "/images/elephant-toothpaste.jpg",
+    },
+  ];
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="クリスマスイベントアイデア">
   <AstroChristmasBackground client:only>
-    <div class="container mx-auto px-4 py-8">
-      <body class="bg-gray-100 text-gray-900">
-        <main class="p-4">
-          <section class="bg-white shadow-md rounded-lg p-6 mb-4">
-            <h2 class="text-2xl font-semibold mb-2">イベント詳細</h2>
-            <p class="mb-4">
-              このサイエンスショーでは、最新の科学技術や驚くべき実験を紹介します。家族みんなで楽しめる内容です。
-            </p>
-            <ul class="list-disc list-inside">
-              <li>日時: 2023年12月??日 ??:00〜??:00</li>
-              <li>場所: 茨城工業高等専門学校</li>
-              <li>参加費: 無料</li>
-            </ul>
-          </section>
-          <section class="bg-white shadow-md rounded-lg p-6">
-            <h2 class="text-2xl font-semibold mb-2">プログラム</h2>
-            <ol class="list-decimal list-inside">
-              <li>オープニングセレモニー</li>
-              <li>科学実験ショー</li>
-              <li>インタラクティブセッション</li>
-              <li>クローズングセレモニー</li>
-            </ol>
-          </section>
-        </main>
-      </body>
-    </div>
+    <main class="container mx-auto px-4 py-8">
+      <h1 class="text-4xl font-bold text-center mb-8 gradient-text text-white">
+        🎄 サイエンスショー 🎄
+      </h1>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {
+          events.map((event) => (
+            <div class="bg-white/80 p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl border-2 border-green-500">
+              <img
+                src={event.image}
+                alt={event.title}
+                class="w-full h-48 object-cover rounded-md"
+              />
+              <h2 class="text-xl font-bold mt-4">
+                <span class="bg-gradient-to-r from-red-500 to-green-500 bg-clip-text text-transparent">
+                  {event.title}
+                </span> 🎁
+              </h2>
+              <p class="mt-2 text-gray-700">{event.description}</p>
+            </div>
+          ))
+        }
+      </div>
+    </main>
   </AstroChristmasBackground>
 </Layout>
+<style>
+  .gradient-text {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+</style>
+
+<script>
+
+</script>
