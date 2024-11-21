@@ -1,0 +1,62 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import AstroChristmasBackground from "../../components/AstroChristmasBackground";
+---
+
+<Layout title="Welcome to Astro.">
+  <AstroChristmasBackground client:only>
+    <div class="container mx-auto px-4 py-8">
+    <body class="bg-gray-100 text-gray-900">
+      <main class="p-4">
+        <section class="bg-white shadow-md rounded-lg p-6 mb-4">
+          <h2 class="text-2xl font-semibold mb-2">イベント詳細</h2>
+          <p class="mb-4">
+            このサイエンスショーでは、最新の科学技術や驚くべき実験を紹介します。家族みんなで楽しめる内容です。
+          </p>
+          <ul class="list-disc list-inside">
+            <li>日時: 2023年12月??日 ??:00〜??:00</li>
+            <li>場所: 茨城工業高等専門学校</li>
+            <li>参加費: 無料</li>
+          </ul>
+        </section>
+        <section class="bg-white shadow-md rounded-lg p-6">
+          <h2 class="text-2xl font-semibold mb-2">ワークショップ内容</h2>
+          <div class="bg-gray-50 shadow-sm rounded-lg p-4 mb-4">
+            <h3 class="text-xl font-semibold mb-2">ミツロウキャンドル(クリスマスツリー風)</h3>
+            <img src="path/to/mitsuro-candle.jpg" alt="ミツロウキャンドル" class="mt-2">
+          </div>
+          <div class="bg-gray-50 shadow-sm rounded-lg p-4 mb-4">
+            <h3 class="text-xl font-semibold mb-2">手作り電球</h3>
+            <img src="path/to/handmade-bulb.jpg" alt="手作り電球" class="mt-2">
+          </div>
+          <div class="bg-gray-50 shadow-sm rounded-lg p-4 mb-4">
+            <h3 class="text-xl font-semibold mb-2">クリスマスリース作り</h3>
+            <img src="path/to/christmas-wreath.jpg" alt="クリスマスリース作り" class="mt-2">
+          </div>
+          <div class="bg-gray-50 shadow-sm rounded-lg p-4 mb-4">
+            <h3 class="text-xl font-semibold mb-2">サンキャッチャー作り（クリスマスツリー風）</h3>
+            <img src="path/to/suncatcher.jpg" alt="サンキャッチャー作り" class="mt-2">
+          </div>
+          <div class="bg-gray-50 shadow-sm rounded-lg p-4 mb-4">
+            <h3 class="text-xl font-semibold mb-2">クリスマスオーナメント作り</h3>
+            <img src="path/to/christmas-ornament.jpg" alt="クリスマスオーナメント作り" class="mt-2">
+          </div>
+          <div class="bg-gray-50 shadow-sm rounded-lg p-4 mb-4">
+            <h3 class="text-xl font-semibold mb-2">クリスタル万華鏡</h3>
+            <img src="path/to/crystal-kaleidoscope.jpg" alt="クリスタル万華鏡" class="mt-2">
+          </div>
+          <div class="bg-gray-50 shadow-sm rounded-lg p-4 mb-4">
+            <h3 class="text-xl font-semibold mb-2">化学カイロ（天体観測時に配るのもあり）</h3>
+            <a href="https://site.ngk.co.jp/lab/no43/" target="_blank">詳細はこちら</a>
+            <img src="path/to/chemical-handwarmer.jpg" alt="化学カイロ" class="mt-2">
+          </div>
+          <div class="bg-gray-50 shadow-sm rounded-lg p-4 mb-4">
+            <h3 class="text-xl font-semibold mb-2">レジン（クリスマス風）</h3>
+            <img src="path/to/resin.jpg" alt="レジン" class="mt-2">
+          </div>
+        </section>
+      </main>
+    </body>
+    </div>
+  </AstroChristmasBackground>
+</Layout>
