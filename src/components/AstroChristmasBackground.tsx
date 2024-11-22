@@ -45,8 +45,8 @@ const AstroChristmasBackground: React.FC<{ children: React.ReactNode }> = ({
   }, []);
 
   return (
-    <div className="relative w-full min-h-screen overflow-auto">
-      <div className="absolute inset-0 -z-10">
+    <div className="relative w-full min-h-screen overflow-x-hidden overflow-y-auto">
+      <div className="fixed inset-0 -z-10">
         {/* Stars */}
         {stars.map((star, index) => (
           <div
@@ -103,8 +103,8 @@ style.textContent = `
     100% { transform: translateX(100%) translateY(100%); }
   }
   @keyframes snowfall {
-    0% { transform: translateY(-100vh) translateX(0); } /* Start above the top */
-    100% { transform: translateY(110vh) translateX(0); }
+    0% { transform: translateY(-10vh) translateX(0); } /* Start slightly above the top */
+    100% { transform: translateY(110vh) translateX(0); } /* End below the bottom */
   }
   @keyframes twinkle {
     0%, 100% { opacity: 0.5; }

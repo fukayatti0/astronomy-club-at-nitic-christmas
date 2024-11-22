@@ -2,8 +2,8 @@
 import Layout from "../../layouts/Layout.astro";
 import AstroChristmasBackground from "../../components/AstroChristmasBackground";
 import { Image } from "astro:assets";
-import liquidoxygen from "/public/images/scienceshow/liquid-oxygen.png"
-import blloonnitrogen from "/public/images/scienceshow/balloon-nitrogen.png"
+import liquidoxygen from "/public/images/scienceshow/liquid-oxygen.png";
+import blloonnitrogen from "/public/images/scienceshow/balloon-nitrogen.png";
 
 const events = [
   // {
@@ -26,26 +26,26 @@ const events = [
   //   description: "極低温でLEDの発光色が変化する様子を観察",
   //   image: "/images/led-nitrogen.jpg",
   // },
-  // {
-  //   title: "象の歯磨き粉実験",
-  //   description: "過酸化水素の分解で大量の泡を作り出す実験",
-  //   image: "/images/elephant-toothpaste.jpg",
-  // },
 ];
 ---
 
 <Layout title="クリスマスイベントアイデア">
   <AstroChristmasBackground client:only>
     <main class="container mx-auto px-4 py-8 overflow-auto">
-      <h1 class="text-2xl font-bold text-center mb-8 gradient-text text-white">
+      <h1 class="text-3xl text-center mb-8 gradient-text text-white">
         🎄 サイエンスショー 🎄
       </h1>
+      <h2 class="text-2xl text-center mb-8 gradient-text text-white">〜極寒の科学〜</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {
           events.map((event) => (
             <div class="bg-white/80 p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl border-2 border-green-500">
               <Image
-                src={typeof event.image === 'string' ? event.image : event.image.src}
+                src={
+                  typeof event.image === "string"
+                    ? event.image
+                    : event.image.src
+                }
                 alt={event.title}
                 width={400}
                 src={event.image}
@@ -54,7 +54,8 @@ const events = [
               <h2 class="text-xl font-bold mt-4">
                 <span class="bg-gradient-to-r from-red-500 to-green-500 bg-clip-text text-transparent">
                   {event.title}
-                </span> 🎅
+                </span>{" "}
+                🎅
               </h2>
               <p class="mt-2 text-gray-700">{event.description}</p>
             </div>
