@@ -63,7 +63,7 @@ const AstroChristmasBackground: React.FC<{ children: React.ReactNode }> = ({
           />
         ))}
         {/* Northern Lights Effect */}
-        <div className="absolute inset-0 bg-gradient-to-t from-green-500 via-red-500 to-black animate-aurora" />
+        <div className="fixed" />
         {/* Christmas Tree Constellation */}
         {/* Shooting Star */}
         <div className="absolute animate-shooting-star">
