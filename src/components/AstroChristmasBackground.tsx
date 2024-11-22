@@ -63,7 +63,7 @@ const AstroChristmasBackground: React.FC<{ children: React.ReactNode }> = ({
           />
         ))}
         {/* Northern Lights Effect */}
-        <div className="absolute inset-0 bg-gradient-to-t from-green-500  via-red-500 to-black animate-aurora" />
+        <div className="absolute inset-0 bg-gradient-to-t from-green-500 via-red-500 to-black animate-aurora" />
         {/* Christmas Tree Constellation */}
         <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
           <svg width="200" height="300" className="opacity-40">
@@ -117,37 +117,37 @@ const AstroChristmasBackground: React.FC<{ children: React.ReactNode }> = ({
 // Add custom animations to Tailwind
 const style = document.createElement("style");
 style.textContent = `
-                                @keyframes aurora {
-                                                                0%, 100% { opacity: 0.3; }
-                                                                50% { opacity: 0.6; }
-                                }
-                                @keyframes shooting-star {
-                                                                0% { transform: translateX(-100%) translateY(-100%); }
-                                                                100% { transform: translateX(100%) translateY(100%); }
-                                }
-                                @keyframes snowfall {
-                                                                0% { transform: translateY(-100vh) translateX(0); } /* Start above the top */
-                                                                100% { transform: translateY(110vh) translateX(0); }
-                                }
-                                @keyframes twinkle {
-                                                                0%, 100% { opacity: 0.5; }
-                                                                50% { opacity: 1; }
-                                }
-                                .animate-aurora { animation: aurora 8s ease-in-out infinite; }
-                                .animate-shooting-star {
-                                                                animation: shooting-star 2s linear infinite;
-                                                                top: 0;
-                                                                left: 0;
-                                }
-                                .animate-snowfall {
-                                                                animation: snowfall 10s linear infinite;
-                                }
-                                .snowflake::before {
-                                                                content: '❄';
-                                                                display: block;
-                                                                font-size: inherit;
-                                                                color: white;
-                                }
+  @keyframes aurora {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.6; }
+  }
+  @keyframes shooting-star {
+    0% { transform: translateX(-100%) translateY(-100%); }
+    100% { transform: translateX(100%) translateY(100%); }
+  }
+  @keyframes snowfall {
+    0% { transform: translateY(-100vh) translateX(0); } /* Start above the top */
+    100% { transform: translateY(110vh) translateX(0); }
+  }
+  @keyframes twinkle {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+  }
+  .animate-aurora { animation: aurora 8s ease-in-out infinite; }
+  .animate-shooting-star {
+    animation: shooting-star 2s linear infinite;
+    top: 0;
+    left: 0;
+  }
+  .animate-snowfall {
+    animation: snowfall 10s linear infinite;
+  }
+  .snowflake::before {
+    content: '❄';
+    display: block;
+    font-size: inherit;
+    color: white;
+  }
 `;
 document.head.appendChild(style);
 

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Image } from "@unpic/react";
-import LogoImage from "/public/image.webp?url";
+import LogoImage from "/public/Logo.webp?url";
 import XLogo from "/public/x-logo.svg?url";
 import InstagramLogo from "/public/Instagram-logo.svg?url";
 
