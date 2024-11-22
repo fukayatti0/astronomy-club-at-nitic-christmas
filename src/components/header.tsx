@@ -99,7 +99,7 @@ const Header: React.FC = () => {
               src={XLogo}
               alt="X"
               layout="fullWidth"
-              className="object-contain"
+              className="object-contain "
             />
           </a>
           <a

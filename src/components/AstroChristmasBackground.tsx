@@ -35,7 +35,7 @@ const AstroChristmasBackground: React.FC<{ children: React.ReactNode }> = ({
     setStars(newStars);
 
     // Generate snowflakes
-    const newSnowflakes = Array.from({ length: 100 }, (_, i) => ({
+    const newSnowflakes = Array.from({ length: 200 }, (_, i) => ({
       id: `snow-${i}`,
       left: `${Math.random() * 100}%`,
       animationDelay: `${Math.random() * 10}s`,
