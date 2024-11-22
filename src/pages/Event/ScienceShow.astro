@@ -1,34 +1,36 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import AstroChristmasBackground from "../../components/AstroChristmasBackground";
-import Image from "astro:assets";
+import { Image } from "astro:assets";
+import liquidoxygen from "/public/images/scienceshow/liquid-oxygen.png"
+import blloonnitrogen from "/public/images/scienceshow/balloon-nitrogen.png"
 
 const events = [
-  {
-    title: "バナナハンマー実験",
-    description: "液体窒素で凍らせたバナナで釘を打ちます",
-    image: "/images/banana-hammer.jpg",
-  },
+  // {
+  //   title: "バナナハンマー実験",
+  //   description: "液体窒素で凍らせたバナナで釘を打ちます",
+  //   image: "/images/banana-hammer.jpg",
+  // },
   {
     title: "液体酸素の神秘",
     description: "気体の酸素が青い液体に変化する様子を観察します",
-    image: "/images/liquid-oxygen.jpg",
+    image: liquidoxygen,
   },
   {
     title: "風船の縮小実験",
     description: "液体窒素で風船が縮む不思議な現象を体験",
-    image: "/images/balloon-nitrogen.jpg",
+    image: blloonnitrogen,
   },
-  {
-    title: "LED色変化実験",
-    description: "極低温でLEDの発光色が変化する様子を観察",
-    image: "/images/led-nitrogen.jpg",
-  },
-  {
-    title: "象の歯磨き粉実験",
-    description: "過酸化水素の分解で大量の泡を作り出す実験",
-    image: "/images/elephant-toothpaste.jpg",
-  },
+  // {
+  //   title: "LED色変化実験",
+  //   description: "極低温でLEDの発光色が変化する様子を観察",
+  //   image: "/images/led-nitrogen.jpg",
+  // },
+  // {
+  //   title: "象の歯磨き粉実験",
+  //   description: "過酸化水素の分解で大量の泡を作り出す実験",
+  //   image: "/images/elephant-toothpaste.jpg",
+  // },
 ];
 ---
 
@@ -42,16 +44,17 @@ const events = [
         {
           events.map((event) => (
             <div class="bg-white/80 p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl border-2 border-green-500">
-              <img
-                src={event.image}
+              <Image
+                src={typeof event.image === 'string' ? event.image : event.image.src}
                 alt={event.title}
+                width={400}
+                src={event.image}
                 class="w-full h-48 object-cover rounded-md"
               />
               <h2 class="text-xl font-bold mt-4">
                 <span class="bg-gradient-to-r from-red-500 to-green-500 bg-clip-text text-transparent">
                   {event.title}
-                </span>{" "}
-                🎁
+                </span> 🎅
               </h2>
               <p class="mt-2 text-gray-700">{event.description}</p>
             </div>

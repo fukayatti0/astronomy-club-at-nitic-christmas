@@ -1,35 +1,41 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import AstroChristmasBackground from "../../components/AstroChristmasBackground";
+import kalediscope from "/public/images/workshop/kalediscope.png";
+import suncatcher from "/public/images/workshop/suncatcher.png";
+import watersticklight from "/public/images/workshop/watersticklight.png"
+import beeswaxCandle from "/public/images/workshop/beeswaxcandle.png"
+import { Image } from "astro:assets";
 
 const events = [
   {
     title: "クリスタル万華鏡",
     description: "本物の鉱石を使った特別な万華鏡作り",
-    image: "/images/kaleidoscope.jpg",
+    image: kalediscope
   },
   {
     title: "光るウォータースティックライト",
     description: "クリスマス限定デザインの光る工作",
-    image: "/images/water-stick-light.jpg",
+    image: watersticklight,
   },
   {
     title: "キラキラサンキャッチャー",
     description: "クリスマスツリー型のおしゃれなサンキャッチャー作り",
-    image: "/images/suncatcher.jpg",
+    image: suncatcher,
   },
   {
     title: "ミツロウキャンドル",
     description: "クリスマスツリー風のナチュラルキャンドル作り",
-    image: "/images/beeswax-candle.jpg",
+    image: beeswaxCandle,
   },
-  {
-    title: "化学カイロ",
-    description: "天体観測にも使える手作り化学カイロ",
-    image: "/images/hand-warmer.jpg",
-  },
+  // {
+  //   title: "化学カイロ",
+  //   description: "天体観測にも使える手作り化学カイロ",
+  //   image: handWarmer,
+  // },
 ];
 ---
+
 
 <Layout title="クリスマスイベントアイデア">
   <AstroChristmasBackground client:only>
@@ -41,11 +47,13 @@ const events = [
         {
           events.map((event) => (
             <div class="bg-white/80 p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl border-2 border-green-500">
-              {/* <img
-                src={event.image}
+              <Image
+                src={typeof event.image === 'string' ? event.image : event.image.src}
                 alt={event.title}
+                width={400}
+                src={event.image}
                 class="w-full h-48 object-cover rounded-md"
-              /> */}
+              />
               <h2 class="text-xl font-bold mt-4">
                 <span class="bg-gradient-to-r from-red-500 to-green-500 bg-clip-text text-transparent">
                   {event.title}

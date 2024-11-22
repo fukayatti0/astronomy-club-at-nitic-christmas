@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Image } from "@unpic/react";
 import LogoImage from "/public/Logo.webp?url";
 import XLogo from "/public/x-logo.svg?url";
@@ -6,6 +6,14 @@ import InstagramLogo from "/public/Instagram-logo.svg?url";
 
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [isOpen]);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);

@@ -45,8 +45,8 @@ const AstroChristmasBackground: React.FC<{ children: React.ReactNode }> = ({
   }, []);
 
   return (
-    <div className="relative w-full h-screen overflow-hidden">
-      <div className="fixed inset-0 -z-10">
+    <div className="relative w-full min-h-screen overflow-auto">
+      <div className="absolute inset-0 -z-10">
         {/* Stars */}
         {stars.map((star, index) => (
           <div
