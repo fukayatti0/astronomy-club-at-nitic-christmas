@@ -30,42 +30,36 @@ class Star {
   reset(): void {
     this.x = Math.random() * this.canvasWidth;
     this.y = Math.random() * this.canvasHeight;
-    this.size = Math.random() * 2.5 + 0.5;
+    this.size = Math.random() * 3.5 + 1; // Increased size
     this.speed = Math.random() * 0.3 + 0.1;
-    this.brightness = Math.random();
+    this.brightness = Math.random() * 0.5 + 0.5; // Increased minimum brightness
     
-    // ランダムな星の色を生成
     const colorType = Math.random();
     if (colorType < 0.2) {
-      // 青っぽい星 (20%)
       this.color = {
         r: Math.floor(Math.random() * 100 + 155),
         g: Math.floor(Math.random() * 100 + 155),
         b: 255
       };
     } else if (colorType < 0.4) {
-      // 赤っぽい星 (20%)
       this.color = {
         r: 255,
         g: Math.floor(Math.random() * 100 + 155),
         b: Math.floor(Math.random() * 100 + 155)
       };
     } else if (colorType < 0.6) {
-      // 黄色っぽい星 (20%)
       this.color = {
         r: 255,
         g: 255,
         b: Math.floor(Math.random() * 100 + 155)
       };
     } else if (colorType < 0.8) {
-      // 紫っぽい星 (20%)
       this.color = {
         r: 255,
         g: Math.floor(Math.random() * 100),
         b: 255
       };
     } else {
-      // 白い星 (20%)
       this.color = {
         r: 255,
         g: 255,
@@ -75,9 +69,8 @@ class Star {
   }
 
   update(): void {
-    // 明滅のアニメーション
     this.brightness += Math.sin(Date.now() * this.twinkleSpeed) * 0.015;
-    this.brightness = Math.max(0.3, Math.min(1, this.brightness));
+    this.brightness = Math.max(0.5, Math.min(1, this.brightness)); // Increased minimum brightness
     
     this.y += this.speed;
     if (this.y > this.canvasHeight) {
@@ -103,7 +96,11 @@ class Star {
   }
 }
 
-const StarryBackground: React.FC = () => {
+interface StarryBackgroundProps {
+  className?: string;
+}
+
+const StarryBackground: React.FC<StarryBackgroundProps> = ({ className }) => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const animationFrameRef = useRef<number>();
   const starsRef = useRef<Star[]>([]);
@@ -120,7 +117,6 @@ const StarryBackground: React.FC = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
       
-      // キャンバスサイズが変更されたら星を再生成
       starsRef.current = Array.from(
         { length: 250 },
         () => new Star(canvas.width, canvas.height)
@@ -130,14 +126,12 @@ const StarryBackground: React.FC = () => {
     setCanvasSize();
     window.addEventListener('resize', setCanvasSize);
 
-    // アニメーションループ
     const animate = () => {
       if (!canvas || !ctx) return;
 
-      // 背景のグラデーション
       const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
-      gradient.addColorStop(0, 'rgba(10, 10, 30, 0.2)');
-      gradient.addColorStop(1, 'rgba(5, 5, 20, 0.2)');
+      gradient.addColorStop(0, 'rgba(5, 5, 15, 0.2)'); // Darker gradient
+      gradient.addColorStop(1, 'rgba(2, 2, 10, 0.2)'); // Darker gradient
       ctx.fillStyle = gradient;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
       
@@ -162,7 +156,7 @@ const StarryBackground: React.FC = () => {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed top-0 left-0 w-full h-full -z-10 bg-gradient-to-b from-gray-900 to-black"
+      className={`fixed top-0 left-0 w-full h-full -z-10 bg-gradient-to-b from-gray-900 to-black ${className}`}
       aria-hidden="true"
     />
   );

@@ -1,5 +1,5 @@
 ---
-import Layout from "../../layouts/Layout.astro";
+import Layout from "../../layouts/ChristmasLayout.astro";
 import AstroChristmasBackground from "../../components/AstroChristmasBackground";
 import { Image } from "astro:assets";
 import liquidoxygen from "/public/images/scienceshow/liquid-oxygen.png";
@@ -32,10 +32,10 @@ const events = [
 <Layout title="クリスマスイベントアイデア">
   <AstroChristmasBackground client:only>
     <main class="container mx-auto px-4 py-8 overflow-auto">
-      <h1 class="text-3xl text-center mb-8 gradient-text text-white">
+      <h1 class="text-3xl text-center mb-8 gradient-text">
         🎄 サイエンスショー 🎄
       </h1>
-      <h2 class="text-2xl text-center mb-8 gradient-text text-white">
+      <h2 class="text-2xl text-center mb-8 gradient-text">
         〜極寒の科学〜
       </h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

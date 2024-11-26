@@ -1,0 +1,65 @@
+---
+interface Props {
+  title: string;
+}
+
+import Header from "../components/header";
+import AstroChristmasBackground from "../components/AstroChristmasBackground";
+import "@fontsource/sawarabi-mincho";
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.webp" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <div class="font-sawarabi min-h-screen relative">
+      <AstroChristmasBackground client:only>
+      <Header client:only />
+      <main style="padding-top: 80px;" class="relative z-10">
+        <slot />
+      </main>
+    </div>
+  </body>
+  <style is:global>
+    :root {
+      --accent: 136, 58, 234;
+      --accent-light: 224, 204, 250;
+      --accent-dark: 49, 10, 101;
+    }
+    html {
+      font-family: system-ui, sans-serif;
+    }
+    code {
+      font-family:
+        Menlo,
+        Monaco,
+        Lucida Console,
+        Liberation Mono,
+        DejaVu Sans Mono,
+        Bitstream Vera Sans Mono,
+        Courier New,
+        monospace;
+    }
+    @keyframes aurora {
+      0%,
+      100% {
+        opacity: 0.3;
+      }
+      50% {
+        opacity: 0.6;
+      }
+    }
+    .animate-aurora {
+      animation: aurora 8s ease-in-out infinite;
+    }
+  </style>
+</html>

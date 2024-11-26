@@ -1,12 +1,10 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import AstroChristmasBackground from "../components/AstroChristmasBackground";
+import Layout from "../layouts/ChristmasLayout.astro";
 ---
 
 <Layout title="イベント一覧">
-  <AstroChristmasBackground client:only>
     <div class="container mx-auto px-4 py-8">
-      <h1 class="text-4xl font-bold mb-8 text-center text-white">
+      <h1 class="text-4xl font-bold mb-8 text-center">
         イベント一覧
       </h1>
       <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-8">

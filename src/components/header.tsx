@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Image } from "@unpic/react";
-import LogoImage from "/public/Logo.webp?url";
+import LogoBlackImage from "/public/Logo-black.png?url";
+import LogoWhiteImage from "/public/Logo-white.webp?url";
 import XLogo from "/public/x-logo.svg?url";
 import InstagramLogo from "/public/Instagram-logo.svg?url";
 
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
     if (isOpen) {
@@ -14,6 +16,20 @@ const Header: React.FC = () => {
       document.body.style.overflow = "auto";
     }
   }, [isOpen]);
+
+  useEffect(() => {
+    const matchMedia = window.matchMedia("(prefers-color-scheme: dark)");
+    setIsDarkMode(matchMedia.matches);
+
+    const handleChange = (e: MediaQueryListEvent) => {
+      setIsDarkMode(e.matches);
+    };
+
+    matchMedia.addEventListener("change", handleChange);
+    return () => {
+      matchMedia.removeEventListener("change", handleChange);
+    };
+  }, []);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -24,7 +40,7 @@ const Header: React.FC = () => {
       <div className="w-20 h-20">
         <a href="/" className="w-20 h-20">
           <Image
-            src={LogoImage}
+            src={isDarkMode ? LogoWhiteImage : LogoBlackImage}
             alt="Astronomy Christmas"
             layout="fullWidth"
             className="object-contain"
@@ -90,7 +106,7 @@ const Header: React.FC = () => {
         </a>
         <div className="w-20 h-20">
           <Image
-            src={LogoImage}
+            src={isDarkMode ? LogoWhiteImage : LogoBlackImage}
             alt="Astronomy Christmas"
             layout="fullWidth"
             className="object-contain"

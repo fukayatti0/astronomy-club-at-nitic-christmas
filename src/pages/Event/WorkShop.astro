@@ -1,6 +1,5 @@
 ---
-import Layout from "../../layouts/Layout.astro";
-import AstroChristmasBackground from "../../components/AstroChristmasBackground";
+import Layout from "../../layouts/ChristmasLayout.astro";
 import kalediscope from "/public/images/workshop/kalediscope.png";
 import suncatcher from "/public/images/workshop/suncatcher.png";
 import watersticklight from "/public/images/workshop/watersticklight.png";
@@ -37,9 +36,8 @@ const events = [
 ---
 
 <Layout title="クリスマスイベントアイデア">
-  <AstroChristmasBackground client:only>
     <main class="container mx-auto px-4 py-8">
-      <h1 class="text-2xl font-bold text-center mb-8 gradient-text text-white">
+      <h1 class="text-2xl font-bold text-center mb-8 gradient-text">
         🎄 ワークショップ 🎄
       </h1>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">

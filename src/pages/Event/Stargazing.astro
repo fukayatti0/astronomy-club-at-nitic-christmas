@@ -1,42 +1,33 @@
 ---
-import Layout from "../../layouts/Layout.astro";
-import StarryBackground from "../../components/StarryBackground";
+import Layout from "../../layouts/StarryLayout.astro";
 ---
 
 <Layout title="Welcome to Astro.">
-  <StarryBackground client:only>
-    <div class="container mx-auto px-4 py-10">
-      <body
-        class="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white"
-      >
-        <div class="p-6">
-          <section
-            class="bg-white/80 p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl border-2 border-green-500"
-          >
-            <h2 class="text-3xl font-bold mb-4 text-center">イベント詳細</h2>
-            <p class="mb-6 text-lg">
-              このクリスマスイベントでは、星空観察や天文学に関する楽しいアクティビティを提供します。家族みんなで楽しめる内容です。
-            </p>
-            <ul class="list-disc list-inside text-lg space-y-2">
-              <li>日時: 2023年12月??日 ??:00〜??:00</li>
-              <li>場所: 茨城工業高等専門学校</li>
-              <li>参加費: 無料</li>
-            </ul>
-          </section>
-          <section
-            class="bg-white/80 p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl border-2 border-green-500 mt-6"
-          >
-            <h2 class="text-3xl font-bold mb-4 text-center">プログラム</h2>
-            <ol class="list-decimal list-inside text-lg space-y-2">
-              <li>オープニングセレモニー</li>
-              <li>星空観察セッション</li>
-              <li>天文学ワークショップ</li>
-              <li>クリスマス特別講演</li>
-              <li>クローズングセレモニー</li>
-            </ol>
-          </section>
-        </div>
-      </body>
+  <div class="container mx-auto px-4 py-10 relative z-10">
+    <div
+      class="p-6 bg-white/80 rounded-lg shadow-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl border-2 border-green-500"
+    >
+      <h2 class="text-3xl font-bold mb-4 text-center">イベント詳細</h2>
+      <p class="mb-6 text-lg">
+        このクリスマスイベントでは、星空観察や天文学に関する楽しいアクティビティを提供します。家族みんなで楽しめる内容です。
+      </p>
+      <ul class="list-disc list-inside text-lg space-y-2">
+        <li>日時: 2023年12月??日 ??:00〜??:00</li>
+        <li>場所: 茨城工業高等専門学校</li>
+        <li>参加費: 無料</li>
+      </ul>
     </div>
-  </StarryBackground>
+    <div
+      class="p-6 bg-white/80 rounded-lg shadow-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl border-2 border-green-500 mt-6"
+    >
+      <h2 class="text-3xl font-bold mb-4 text-center">プログラム</h2>
+      <ol class="list-decimal list-inside text-lg space-y-2">
+        <li>オープニングセレモニー</li>
+        <li>星空観察セッション</li>
+        <li>天文学ワークショップ</li>
+        <li>クリスマス特別講演</li>
+        <li>クローズングセレモニー</li>
+      </ol>
+    </div>
+  </div>
 </Layout>

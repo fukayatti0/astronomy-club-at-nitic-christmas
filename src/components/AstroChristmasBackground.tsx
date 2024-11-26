@@ -63,8 +63,31 @@ const AstroChristmasBackground: React.FC<{ children: React.ReactNode }> = ({
           />
         ))}
         {/* Northern Lights Effect */}
-        <div className="fixed" />
+        <div className="fixed inset-0 bg-gradient-to-t from-green-500 via-red-500 to-transparent animate-aurora -z-10" />
         {/* Christmas Tree Constellation */}
+        <div className="fixed inset-0 flex justify-center items-center -z-5">
+          <svg width="200" height="300" className="opacity-40">
+            <g stroke="white" strokeWidth="1">
+              <line x1="100" y1="20" x2="50" y2="100"></line>
+              <line x1="100" y1="20" x2="150" y2="100"></line>
+              <line x1="50" y1="100" x2="150" y2="100"></line>
+              <line x1="75" y1="100" x2="25" y2="180"></line>
+              <line x1="125" y1="100" x2="175" y2="180"></line>
+              <line x1="25" y1="180" x2="175" y2="180"></line>
+              <line x1="80" y1="180" x2="80" y2="280"></line>
+              <line x1="120" y1="180" x2="120" y2="280"></line>
+              <line x1="80" y1="280" x2="120" y2="280"></line>
+              <circle cx="100" cy="20" r="2" fill="white"></circle>
+              <circle cx="50" cy="100" r="2" fill="white"></circle>
+              <circle cx="150" cy="100" r="2" fill="white"></circle>
+              <circle cx="25" cy="180" r="2" fill="white"></circle>
+              <circle cx="175" cy="180" r="2" fill="white"></circle>
+              <circle cx="80" cy="280" r="2" fill="white"></circle>
+              <circle cx="120" cy="280" r="2" fill="white"></circle>
+              <circle cx="175" cy="180" r="2" fill="white"></circle>
+            </g>
+          </svg>
+        </div>
         {/* Shooting Star */}
         <div className="absolute animate-shooting-star">
           <div className="h-px w-12 bg-gradient-to-r from-transparent via-white to-transparent transform -rotate-45" />
