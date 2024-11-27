@@ -106,7 +106,7 @@ const Header: React.FC = () => {
         </a>
         <div className="w-20 h-20">
           <Image
-            src={isDarkMode ? LogoWhiteImage : LogoBlackImage}
+            src={isDarkMode ? LogoBlackImage : LogoWhiteImage}
             alt="Astronomy Christmas"
             layout="fullWidth"
             className="object-contain"

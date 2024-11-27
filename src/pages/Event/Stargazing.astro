@@ -2,10 +2,25 @@
 import Layout from "../../layouts/StarryLayout.astro";
 ---
 
+<style>
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 2s ease-in-out;
+}
+</style>
+
 <Layout title="Welcome to Astro.">
   <div class="container mx-auto px-4 py-10 relative z-10">
     <div
-      class="p-6 bg-white/80 rounded-lg shadow-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl border-2 border-green-500"
+      class="p-6 bg-white/80 rounded-lg shadow-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl border-2 border-green-500 fade-in"
     >
       <h2 class="text-3xl font-bold mb-4 text-center">イベント詳細</h2>
       <p class="mb-6 text-lg">
@@ -18,7 +33,7 @@ import Layout from "../../layouts/StarryLayout.astro";
       </ul>
     </div>
     <div
-      class="p-6 bg-white/80 rounded-lg shadow-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl border-2 border-green-500 mt-6"
+      class="p-6 bg-white/80 rounded-lg shadow-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl border-2 border-green-500 mt-6 fade-in"
     >
       <h2 class="text-3xl font-bold mb-4 text-center">プログラム</h2>
       <ol class="list-decimal list-inside text-lg space-y-2">
