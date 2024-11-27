@@ -23,7 +23,7 @@ const { title } = Astro.props;
   <body>
     <div class="font-sawarabi min-h-screen relative">
       <SpeedInsights />
-      <StarryBackground client:only="react" />
+      <StarryBackground client:only />
       <Header client:only />
       <main style="padding-top: 80px;" class="relative z-10">
         <slot />
