@@ -5,6 +5,7 @@ import suncatcher from "/public/images/workshop/suncatcher.png";
 import watersticklight from "/public/images/workshop/watersticklight.png";
 import beeswaxCandle from "/public/images/workshop/beeswaxcandle.png";
 import { Image } from "astro:assets";
+import "animate.css";
 
 const events = [
   {
@@ -43,7 +44,7 @@ const events = [
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
         {
           events.map((event) => (
-            <div class="bg-white/80 p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl border-2 border-green-500 animate-fadeIn">
+            <div class="bg-white/80 p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl border-2 border-green-500 animate__animated animate__fadeIn">
               <Image
                 src={
                   typeof event.image === "string"
@@ -68,20 +69,3 @@ const events = [
       </div>
     </main>
 </Layout>
-
-<style>
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-fadeIn {
-  animation: fadeIn 1s ease-in-out;
-}
-</style>

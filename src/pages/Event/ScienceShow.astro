@@ -4,6 +4,7 @@ import AstroChristmasBackground from "../../components/AstroChristmasBackground"
 import { Image } from "astro:assets";
 import liquidoxygen from "/public/images/scienceshow/liquid-oxygen.png";
 import blloonnitrogen from "/public/images/scienceshow/balloon-nitrogen.png";
+import "animate.css";
 
 const events = [
   // {
@@ -32,16 +33,16 @@ const events = [
 <Layout title="クリスマスイベントアイデア">
   <AstroChristmasBackground client:only>
     <main class="container mx-auto px-4 py-8 overflow-auto">
-      <h1 class="text-3xl text-center mb-8 gradient-text">
+      <h1 class="text-3xl text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-green-500">
         🎄 サイエンスショー 🎄
       </h1>
-      <h2 class="text-2xl text-center mb-8 gradient-text">
+      <h2 class="text-2xl text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-green-500">
         〜極寒の科学〜
       </h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {
           events.map((event) => (
-            <div class="event-card bg-white/80 p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl border-2 border-green-500">
+            <div class="event-card bg-white/80 p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl border-2 border-green-500 animate__animated animate__fadeInUp">
               <Image
                 src={
                   typeof event.image === "string"
@@ -67,25 +68,3 @@ const events = [
     </main>
   </AstroChristmasBackground>
 </Layout>
-<style>
-  .gradient-text {
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  }
-
-  .event-card {
-    animation: fadeInUp 1s ease-in-out;
-  }
-
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-</style>
-
-<script></script>
