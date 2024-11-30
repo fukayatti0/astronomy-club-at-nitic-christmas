@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Image } from "@unpic/astro";
+import { Image } from "@unpic/react";
 import LogoBlackImage from "/public/Logo-black.webp?url";
 import LogoWhiteImage from "/public/Logo-white.webp?url";
 import XLogo from "/public/x-logo.svg?url";
@@ -42,8 +42,7 @@ const Header: React.FC = () => {
           <Image
             src={isDarkMode ? LogoWhiteImage : LogoBlackImage}
             alt="Astronomy Christmas"
-            layout="fullWidth"
-            class="object-contain"
+            className="object-contain"
             width={80}
             height={80}
           />
@@ -110,8 +109,7 @@ const Header: React.FC = () => {
           <Image
             src={isDarkMode ? LogoBlackImage : LogoWhiteImage}
             alt="Astronomy Christmas"
-            layout="fullWidth"
-            class="object-contain"
+            className="object-contain"
             width={80}
             height={80}
           />
@@ -125,11 +123,9 @@ const Header: React.FC = () => {
           >
             <Image
               src={XLogo}
-              alt="X"
-              layout="fullWidth"
-              class="object-contain"
               width={48}
               height={48}
+              alt="X"
             />
           </a>
           <a
@@ -141,8 +137,7 @@ const Header: React.FC = () => {
             <Image
               src={InstagramLogo}
               alt="Instagram"
-              layout="fullWidth"
-              class="object-contain"
+              className="object-contain"
               width={56}
               height={56}
             />
