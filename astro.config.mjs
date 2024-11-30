@@ -14,10 +14,7 @@ export default defineConfig({
   integrations: [
     tailwind(), 
     react(), 
-    playformCompress({ /* options */ }), 
+    playformCompress({ /* options */ }),
     playformInline({ /* options */ })
   ],
-  image: {
-    domains: ["https://via.placeholder.com"],
-  }
 });
