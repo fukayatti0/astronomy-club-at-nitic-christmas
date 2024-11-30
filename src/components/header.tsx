@@ -45,8 +45,8 @@ const Header: React.FC = () => {
             className="object-contain"
             width={80}
             height={80}
-            sizes="(max-width: 600px) 40px, 80px"
-            srcSet={`${LogoBlackImage} 40w, ${LogoBlackImage} 80w`}
+            sizes="(max-width: 600px) 40px, (max-width: 1200px) 60px, 80px"
+            srcSet={`${LogoBlackImage} 40w, ${LogoBlackImage} 60w, ${LogoBlackImage} 80w`}
           />
         </a>
       </div>
@@ -114,8 +114,8 @@ const Header: React.FC = () => {
             className="object-contain"
             width={80}
             height={80}
-            sizes="(max-width: 600px) 40px, 80px"
-            srcSet={`${LogoBlackImage} 40w, ${LogoBlackImage} 80w`}
+            sizes="(max-width: 600px) 40px, (max-width: 1200px) 60px, 80px"
+            srcSet={`${LogoBlackImage} 40w, ${LogoBlackImage} 60w, ${LogoBlackImage} 80w`}
           />
         </div>
         <div className="flex space-x-4 mt-5">
@@ -130,8 +130,8 @@ const Header: React.FC = () => {
               width={48}
               height={48}
               alt="X"
-              sizes="(max-width: 600px) 24px, 48px"
-              srcSet={`${XLogo} 24w, ${XLogo} 48w`}
+              sizes="(max-width: 600px) 24px, (max-width: 1200px) 36px, 48px"
+              srcSet={`${XLogo} 24w, ${XLogo} 36w, ${XLogo} 48w`}
             />
           </a>
           <a
@@ -146,8 +146,8 @@ const Header: React.FC = () => {
               className="object-contain"
               width={56}
               height={56}
-              sizes="(max-width: 600px) 28px, 56px"
-              srcSet={`${InstagramLogo} 28w, ${InstagramLogo} 56w`}
+              sizes="(max-width: 600px) 28px, (max-width: 1200px) 42px, 56px"
+              srcSet={`${InstagramLogo} 28w, ${InstagramLogo} 42w, ${InstagramLogo} 56w`}
             />
           </a>
         </div>
