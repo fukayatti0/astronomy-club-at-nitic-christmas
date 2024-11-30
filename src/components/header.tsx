@@ -38,12 +38,12 @@ const Header: React.FC = () => {
   return (
     <header className="fixed top-0 left-0 w-full bg-transparent p-5 flex justify-between items-center text-white z-50">
       <div className="w-20 h-20">
-        <a href="/" className="w-20 h-20">
+        <a href="/">
           <Image
             src={isDarkMode ? LogoWhiteImage : LogoBlackImage}
             alt="Astronomy Christmas"
             className="object-contain"
-            width={80}
+            width={100}
             height={80}
             sizes="(max-width: 600px) 40px, (max-width: 1200px) 60px, 80px"
             srcSet={`${LogoBlackImage} 40w, ${LogoBlackImage} 60w, ${LogoBlackImage} 80w`}
