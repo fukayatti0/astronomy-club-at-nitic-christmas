@@ -7,11 +7,6 @@ import blloonnitrogen from "/public/images/scienceshow/balloon-nitrogen.webp";
 import "animate.css";
 
 const events = [
-  // {
-  //   title: "バナナハンマー実験",
-  //   description: "液体窒素で凍らせたバナナで釘を打ちます",
-  //   image: "/images/banana-hammer.jpg",
-  // },
   {
     title: "液体酸素の神秘",
     description: "気体の酸素が青い液体に変化する様子を観察します",
@@ -22,11 +17,6 @@ const events = [
     description: "液体窒素で風船が縮む不思議な現象を体験",
     image: blloonnitrogen,
   },
-  // {
-  //   title: "LED色変化実験",
-  //   description: "極低温でLEDの発光色が変化する様子を観察",
-  //   image: "/images/led-nitrogen.jpg",
-  // },
 ];
 ---
 
@@ -44,14 +34,10 @@ const events = [
           events.map((event) => (
             <div class="event-card bg-white/80 p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl border-2 border-green-500 animate__animated animate__backInUp">
               <Image
-                src={
-                  typeof event.image === "string"
-                    ? event.image
-                    : event.image.src
-                }
+                src={event.image}
                 alt={event.title}
                 width={400}
-                src={event.image}
+                height={300}
                 class="w-full object-cover rounded-md"
               />
               <h2 class="text-xl font-bold mt-4">

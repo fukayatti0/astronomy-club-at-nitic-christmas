@@ -46,14 +46,10 @@ const events = [
           events.map((event) => (
             <div class="bg-white/80 p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl border-2 border-green-500 animate__animated animate__flipInY">
                 <Image
-                src={
-                  typeof event.image === "string"
-                  ? event.image
-                  : event.image.src
-                }
+                src={event.image}
                 alt={event.title}
-                width={400}
-                height={300}
+                widths={[300, 600, 900]}
+                sizes="(max-width: 600px) 300px, (max-width: 900px) 600px, 900px"
                 class="w-full h-50 object-cover rounded-md"
                 loading="lazy"
                 />
