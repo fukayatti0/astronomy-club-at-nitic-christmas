@@ -45,17 +45,18 @@ const events = [
         {
           events.map((event) => (
             <div class="bg-white/80 p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl border-2 border-green-500 animate__animated animate__flipInY">
-              <Image
+                <Image
                 src={
                   typeof event.image === "string"
-                    ? event.image
-                    : event.image.src
+                  ? event.image
+                  : event.image.src
                 }
                 alt={event.title}
                 width={400}
-                src={event.image}
+                height={300}
                 class="w-full h-50 object-cover rounded-md"
-              />
+                loading="lazy"
+                />
               <h2 class="text-xl font-bold mt-4">
                 <span class="bg-gradient-to-r from-red-500 to-green-500 bg-clip-text text-transparent">
                   {event.title}
