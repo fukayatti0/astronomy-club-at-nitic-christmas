@@ -109,13 +109,13 @@ const Header: React.FC = () => {
         </a>
         <div className="w-20 h-20">
           <Image
-            src={isDarkMode ? LogoBlackImage : LogoWhiteImage}
+            src={LogoWhiteImage}
             alt="Astronomy Christmas"
             className="object-contain"
-            width={80}
+            width={100}
             height={80}
             sizes="(max-width: 600px) 40px, (max-width: 1200px) 60px, 80px"
-            srcSet={`${LogoBlackImage} 40w, ${LogoBlackImage} 60w, ${LogoBlackImage} 80w`}
+            srcSet={`${LogoWhiteImage} 40w, ${LogoWhiteImage} 60w, ${LogoWhiteImage} 80w`}
           />
         </div>
         <div className="flex space-x-4 mt-5">
