@@ -1,7 +1,7 @@
 // components/StarryBackground.tsx
-'use client';
+"use client";
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from "react";
 
 interface StarColor {
   r: number;
@@ -33,37 +33,37 @@ class Star {
     this.size = Math.random() * 3.5 + 1; // Increased size
     this.speed = Math.random() * 0.3 + 0.1;
     this.brightness = Math.random() * 0.5 + 0.5; // Increased minimum brightness
-    
+
     const colorType = Math.random();
     if (colorType < 0.2) {
       this.color = {
         r: Math.floor(Math.random() * 100 + 155),
         g: Math.floor(Math.random() * 100 + 155),
-        b: 255
+        b: 255,
       };
     } else if (colorType < 0.4) {
       this.color = {
         r: 255,
         g: Math.floor(Math.random() * 100 + 155),
-        b: Math.floor(Math.random() * 100 + 155)
+        b: Math.floor(Math.random() * 100 + 155),
       };
     } else if (colorType < 0.6) {
       this.color = {
         r: 255,
         g: 255,
-        b: Math.floor(Math.random() * 100 + 155)
+        b: Math.floor(Math.random() * 100 + 155),
       };
     } else if (colorType < 0.8) {
       this.color = {
         r: 255,
         g: Math.floor(Math.random() * 100),
-        b: 255
+        b: 255,
       };
     } else {
       this.color = {
         r: 255,
         g: 255,
-        b: 255
+        b: 255,
       };
     }
   }
@@ -71,7 +71,7 @@ class Star {
   update(): void {
     this.brightness += Math.sin(Date.now() * this.twinkleSpeed) * 0.015;
     this.brightness = Math.max(0.5, Math.min(1, this.brightness)); // Increased minimum brightness
-    
+
     this.y += this.speed;
     if (this.y > this.canvasHeight) {
       this.reset();
@@ -81,13 +81,17 @@ class Star {
 
   draw(ctx: CanvasRenderingContext2D): void {
     const gradient = ctx.createRadialGradient(
-      this.x, this.y, 0,
-      this.x, this.y, this.size
+      this.x,
+      this.y,
+      0,
+      this.x,
+      this.y,
+      this.size
     );
 
     const { r, g, b } = this.color;
     gradient.addColorStop(0, `rgba(${r}, ${g}, ${b}, ${this.brightness})`);
-    gradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
+    gradient.addColorStop(1, "rgba(0, 0, 0, 0)");
 
     ctx.beginPath();
     ctx.fillStyle = gradient;
@@ -109,14 +113,14 @@ const StarryBackground: React.FC<StarryBackgroundProps> = ({ className }) => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    const ctx = canvas.getContext('2d');
+    const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
     const setCanvasSize = () => {
       if (!canvas) return;
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
-      
+
       starsRef.current = Array.from(
         { length: 250 },
         () => new Star(canvas.width, canvas.height)
@@ -124,29 +128,29 @@ const StarryBackground: React.FC<StarryBackgroundProps> = ({ className }) => {
     };
 
     setCanvasSize();
-    window.addEventListener('resize', setCanvasSize);
+    window.addEventListener("resize", setCanvasSize);
 
     const animate = () => {
       if (!canvas || !ctx) return;
 
       const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
-      gradient.addColorStop(0, 'rgba(5, 5, 15, 0.2)'); // Darker gradient
-      gradient.addColorStop(1, 'rgba(2, 2, 10, 0.2)'); // Darker gradient
+      gradient.addColorStop(0, "rgba(5, 5, 15, 0.2)"); // Darker gradient
+      gradient.addColorStop(1, "rgba(2, 2, 10, 0.2)"); // Darker gradient
       ctx.fillStyle = gradient;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
-      
-      starsRef.current.forEach(star => {
+
+      starsRef.current.forEach((star) => {
         star.update();
         star.draw(ctx);
       });
-      
+
       animationFrameRef.current = requestAnimationFrame(animate);
     };
 
     animate();
 
     return () => {
-      window.removeEventListener('resize', setCanvasSize);
+      window.removeEventListener("resize", setCanvasSize);
       if (animationFrameRef.current) {
         cancelAnimationFrame(animationFrameRef.current);
       }
