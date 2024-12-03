@@ -1,38 +1,20 @@
 ---
 import Layout from "../../layouts/ChristmasLayout.astro";
-import kalediscope from "/public/images/workshop/kalediscope.webp";
 import suncatcher from "/public/images/workshop/suncatcher.webp";
-import watersticklight from "/public/images/workshop/watersticklight.webp";
-import beeswaxCandle from "/public/images/workshop/beeswaxcandle.webp";
 import { Image } from "astro:assets";
 import "animate.css";
 
 const events = [
-  {
-    title: "クリスタル万華鏡",
-    description: "本物の鉱石を使った特別な万華鏡作り",
-    image: kalediscope,
-  },
-  {
-    title: "光るウォータースティックライト",
-    description: "クリスマス限定デザインの光る工作",
-    image: watersticklight,
-  },
   {
     title: "キラキラサンキャッチャー",
     description: "クリスマスツリー型のおしゃれなサンキャッチャー作り",
     image: suncatcher,
   },
   {
-    title: "ミツロウキャンドル",
-    description: "クリスマスツリー風のナチュラルキャンドル作り",
-    image: beeswaxCandle,
+    title: "化学カイロ",
+    description: "天体観測にも使える手作り化学カイロ",
+    image: suncatcher,
   },
-  // {
-  //   title: "化学カイロ",
-  //   description: "天体観測にも使える手作り化学カイロ",
-  //   image: handWarmer,
-  // },
 ];
 ---
 
@@ -41,7 +23,7 @@ const events = [
       <h1 class="text-2xl font-bold text-center mb-8 gradient-text">
         🎄 ワークショップ 🎄
       </h1>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {
           events.map((event, index) => (
             <div class="bg-white/80 p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl border-2 border-green-500 animate__animated animate__flipInY">
