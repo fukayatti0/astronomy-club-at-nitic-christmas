@@ -36,7 +36,7 @@ const Header: React.FC = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 w-full bg-transparent p-5 flex justify-between items-center text-white z-50">
+    <header className="fixed top-0 left-0 w-full bg-transparent p-5 flex justify-between items-center text-center text-white z-50">
       <div className="w-20 h-20">
         <a href="/">
           <Image
