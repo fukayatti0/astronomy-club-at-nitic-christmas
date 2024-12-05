@@ -101,12 +101,46 @@ const Header: React.FC = () => {
         >
           Home
         </a>
-        <a
-          href="/Event"
-          className="text-white no-underline text-2xl transition-colors duration-300 hover:text-blue-400"
-        >
-          Event
-        </a>
+        <details className="text-2xl hover:text-blue-400">
+          <summary>
+            <a
+              href="/Event"
+              className="text-white no-underline transition-colors duration-300 hover:text-blue-400"
+            >
+              Event
+            </a>
+          </summary>
+          <ul>
+            <li>
+              <a
+                href="/Event/ScienceShow"
+                className="text-white no-underline transition-colors duration-300 hover:text-blue-400"
+              >
+                ScienceShow
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a
+                href="/Event/WorkShop"
+                className="text-white no-underline transition-colors duration-300 hover:text-blue-400"
+              >
+                WorkShop
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a
+                href="/Event/Stargazing"
+                className="text-white no-underline transition-colors duration-300 hover:text-blue-400"
+              >
+                Stargazing
+              </a>
+            </li>
+          </ul>
+        </details>
         <div className="w-20 h-20">
           <Image
             src={LogoWhiteImage}
