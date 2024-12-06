@@ -1,62 +1,127 @@
 ---
 import Layout from "../layouts/ChristmasLayout.astro";
 import "animate.css";
+import { Image } from "astro:assets";
+import WorkShop from "/public/images/WorkShop.jpg";
 ---
 
 <Layout title="イベント一覧">
   <div class="container mx-auto px-4 py-8">
     <h1 class="text-4xl font-bold mb-8 text-center">イベント一覧</h1>
     <div
-      class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-8 text-left"
+      class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-8 text-left justify-between"
     >
       <a
-        href="/Event/ScienceShow"
-        class="bg-white/80 rounded-lg shadow-md p-6 animate__animated animate__lightSpeedInRight"
+      href="/Event/ScienceShow"
+      class="bg-white/80 min-h-[12rem] rounded-lg shadow-md p-6 animate__animated animate__lightSpeedInRight relative overflow-hidden group"
       >
-        <h2 class="text-2xl font-semibold mb-4">🧪サイエンスショー</h2>
-        <div class="space-y-4">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="space-y-4 z-10 w-full lg:w-1/2">
+        <div>
+          <h2 class="text-2xl font-semibold mb-4">🧪サイエンスショー</h2>
           <ul class="font-bold text-lg">
-            <li>極寒の科学</li>
+          <li>極寒の科学</li>
           </ul>
           <ul class="text-gray-700 mb-4">
-            <li>日時: 2024年12月21日 15:00〜</li>
-            <li>場所: 茨城工業高等専門学校 図書館棟 1階 セミナー交流室</li>
+          <li>日時: 2024年12月21日 15:00〜</li>
+          <li>場所: 茨城工業高等専門学校 図書館棟 1階 セミナー交流室</li>
           </ul>
-          <div class="text-blue-500 hover:underline">イベント内容を見る</div>
+          <div class="text-blue-500 hover:underline">
+          イベント内容を見る
+          </div>
         </div>
+        </div>
+        <div class="hidden lg:block absolute right-0 top-0 h-full transition-transform duration-300 transform translate-x-full group-hover:translate-x-0">
+        <div
+          class="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-white/30 pointer-events-none z-10"
+        >
+        </div>
+        <div
+          class="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-white/90 pointer-events-none z-20"
+        >
+        </div>
+        <Image
+          src={WorkShop}
+          alt="ワークショップ"
+          class="object-cover h-full w-96"
+        />
+        </div>
+      </div>
       </a>
       <a
-        href="/Event/WorkShop"
-        class="bg-white/80 rounded-lg shadow-md p-6 animate__animated animate__lightSpeedInRight"
-      >
-        <h2 class="text-2xl font-semibold mb-4">🎄ワークショップ</h2>
-        <div class="space-y-4">
-          <ul class="font-bold text-lg">
-            <li>温かい冬の思い出</li>
-          </ul>
-          <ul class="text-gray-700 mb-4">
-            <li>日時: 2024年12月21日 16:00〜</li>
-            <li>場所: 茨城工業高等専門学校 図書館棟 1階 セミナー交流室</li>
-          </ul>
-          <div class="text-blue-500 hover:underline">イベント内容を見る</div>
-        </div>
-        <a
-          href="/Event/Stargazing"
-          class="bg-white/80 rounded-lg shadow-md p-6 animate__animated animate__lightSpeedInRight"
-        >
-          <h2 class="text-2xl font-semibold mb-4">🔭天体観測</h2>
-          <div class="space-y-4">
+      href="/Event/Workshop"
+      class="bg-white/80 min-h-[12rem] rounded-lg shadow-md p-6 animate__animated animate__lightSpeedInRight relative overflow-hidden group"
+    >
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="space-y-4 z-10 w-full lg:w-1/2">
+          <div>
+            <h2 class="text-2xl font-semibold mb-4">🎄ワークショップ</h2>
             <ul class="font-bold text-lg">
-              星空のクリスマス
+              <li>温かい冬の思い出</li>
             </ul>
             <ul class="text-gray-700 mb-4">
-              <li>日時: 2024年12月21日 17:00〜</li>
-              <li>場所: 茨城工業高等専門学校 1号館 屋上</li>
+              <li>日時: 2024年12月21日 16:00〜</li>
+              <li>場所: 茨城工業高等専門学校 図書館棟 1階 セミナー交流室</li>
             </ul>
-            <div class="text-blue-500 hover:underline">イベント内容を見る</div>
+            <div class="text-blue-500 hover:underline">
+              イベント内容を見る
+            </div>
           </div>
-        </a>
-      </a>
+        </div>
+        <div class="hidden lg:block absolute right-0 top-0 h-full transition-transform duration-300 transform translate-x-full group-hover:translate-x-0">
+          <div
+            class="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-white/30 pointer-events-none z-10"
+          >
+          </div>
+          <div
+            class="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-white/90 pointer-events-none z-20"
+          >
+          </div>
+          <Image
+            src={WorkShop}
+            alt="ワークショップ"
+            class="object-cover h-full w-96"
+          />
+        </div>
+      </div>
+    </a>
+    <a
+    href="/Event/AstronomyObservation"
+    class="bg-white/80 min-h-[12rem] rounded-lg shadow-md p-6 animate__animated animate__lightSpeedInRight relative overflow-hidden group"
+  >
+    <div class="flex flex-col md:flex-row justify-between items-center">
+      <div class="space-y-4 z-10 w-full lg:w-1/2">
+        <div>
+          <h2 class="text-2xl font-semibold mb-4">🔭天体観測</h2>
+          <ul class="font-bold text-lg">
+            <li>星空のクリスマス</li>
+          </ul>
+          <ul class="text-gray-700 mb-4">
+            <li>日時: 2024年12月21日 17:00〜</li>
+            <li>場所: 茨城工業高等専門学校 1号館 屋上</li>
+          </ul>
+          <div class="text-blue-500 hover:underline">
+            イベント内容を見る
+          </div>
+        </div>
+      </div>
+      <div class="hidden lg:block absolute right-0 top-0 h-full transition-transform duration-300 transform translate-x-full group-hover:translate-x-0">
+        <div
+          class="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-white/30 pointer-events-none z-10"
+        >
+        </div>
+        <div
+          class="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-white/90 pointer-events-none z-20"
+        >
+        </div>
+        <Image
+          src={WorkShop}
+          alt="天体観測"
+          class="object-cover h-full w-96"
+        />
+      </div>
+    </div>
+  </a>
     </div>
   </div>
 </Layout>
