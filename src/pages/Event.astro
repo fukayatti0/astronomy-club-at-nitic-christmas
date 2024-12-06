@@ -3,6 +3,7 @@ import Layout from "../layouts/ChristmasLayout.astro";
 import "animate.css";
 import { Image } from "astro:assets";
 import WorkShop from "/public/images/WorkShop.jpg";
+import Stargazing from "/public/images/Stargazing.jpg";
 ---
 
 <Layout title="イベント一覧">
@@ -56,7 +57,9 @@ import WorkShop from "/public/images/WorkShop.jpg";
         href="/Event/WorkShop"
         class="bg-white/80 min-h-[12rem] rounded-lg shadow-md p-6 animate__animated animate__lightSpeedInRight relative overflow-hidden group"
       >
-        <div class="flex flex-col md:flex-row justify-between items-center text-center sm:text-center md:text-center lg:text-left">
+        <div
+          class="flex flex-col md:flex-row justify-between items-center text-center sm:text-center md:text-center lg:text-left"
+        >
           <div class="space-y-4 z-10 w-full lg:w-1/2">
             <div>
               <h2 class="text-2xl font-semibold mb-4">🎄ワークショップ</h2>
@@ -95,7 +98,9 @@ import WorkShop from "/public/images/WorkShop.jpg";
         href="/Event/Stargazing"
         class="bg-white/80 min-h-[12rem] rounded-lg shadow-md p-6 animate__animated animate__lightSpeedInRight relative overflow-hidden group"
       >
-        <div class="flex flex-col md:flex-row justify-between items-center text-center sm:text-center md:text-center lg:text-left">
+        <div
+          class="flex flex-col md:flex-row justify-between items-center text-center sm:text-center md:text-center lg:text-left"
+        >
           <div class="space-y-4 z-10 w-full lg:w-1/2">
             <div>
               <h2 class="text-2xl font-semibold mb-4">🔭天体観測</h2>
@@ -123,7 +128,7 @@ import WorkShop from "/public/images/WorkShop.jpg";
             >
             </div>
             <Image
-              src={WorkShop}
+              src={Stargazing}
               alt="天体観測"
               class="object-cover h-full w-96"
             />
