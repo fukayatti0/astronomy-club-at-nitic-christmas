@@ -4,6 +4,7 @@ import "animate.css";
 import { Image } from "astro:assets";
 import WorkShop from "/public/images/workshop/suncatcher.webp";
 import Stargazing from "/public/images/Stargazing.jpg";
+import StarryBackground from "../components/StarryBackground";
 ---
 
 <Layout title="イベント一覧">
@@ -96,8 +97,11 @@ import Stargazing from "/public/images/Stargazing.jpg";
       </a>
       <a
         href="/Event/Stargazing"
-        class="bg-white/80 hover:bg-black hover:text-white min-h-[12rem] rounded-lg shadow-md p-6 animate__animated animate__lightSpeedInRight relative overflow-hidden group"
+        class="bg-white/80 hover:text-white min-h-[12rem] rounded-lg shadow-md p-6 animate__animated animate__lightSpeedInRight relative overflow-hidden group"
       >
+      <div class="hidden group-hover:block">
+        <StarryBackground client:load />
+      </div>
         <div
           class="flex flex-col md:flex-row justify-between items-center text-center sm:text-center md:text-center lg:text-left"
         >
