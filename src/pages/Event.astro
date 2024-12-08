@@ -2,7 +2,7 @@
 import Layout from "../layouts/ChristmasLayout.astro";
 import "animate.css";
 import { Image } from "astro:assets";
-import WorkShop from "/public/images/WorkShop.jpg";
+import WorkShop from "/public/images/workshop/suncatcher.webp";
 import Stargazing from "/public/images/Stargazing.jpg";
 ---
 
@@ -96,7 +96,7 @@ import Stargazing from "/public/images/Stargazing.jpg";
       </a>
       <a
         href="/Event/Stargazing"
-        class="bg-white/80 min-h-[12rem] rounded-lg shadow-md p-6 animate__animated animate__lightSpeedInRight relative overflow-hidden group"
+        class="bg-white/80 hover:bg-black hover:text-white min-h-[12rem] rounded-lg shadow-md p-6 animate__animated animate__lightSpeedInRight relative overflow-hidden group"
       >
         <div
           class="flex flex-col md:flex-row justify-between items-center text-center sm:text-center md:text-center lg:text-left"
@@ -107,7 +107,7 @@ import Stargazing from "/public/images/Stargazing.jpg";
               <ul class="font-bold text-lg">
                 <li>星空のクリスマス</li>
               </ul>
-              <ul class="text-gray-700 mb-4">
+              <ul class="text-gray-700 group-hover:text-white mb-4">
                 <li>日時: 2024年12月21日 17:00〜</li>
                 <li>場所: 茨城高専 1号館 屋上</li>
               </ul>
@@ -120,11 +120,11 @@ import Stargazing from "/public/images/Stargazing.jpg";
             class="hidden lg:block absolute right-0 top-0 h-full transition-transform duration-300 transform translate-x-full group-hover:translate-x-0"
           >
             <div
-              class="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-white/30 pointer-events-none z-10"
+              class="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-black/30  pointer-events-none z-10"
             >
             </div>
             <div
-              class="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-white/90 pointer-events-none z-20"
+              class="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-black/90 pointer-events-none z-20"
             >
             </div>
             <Image
