@@ -215,7 +215,7 @@ const Header: React.FC = () => {
               href={link.href}
               className="
                 flex items-center justify-center space-x-3 
-                text-2xl text-white 
+                text-2xl text-white
                 hover:text-blue-400 transition-colors
               "
               onClick={toggleMenu}
@@ -224,28 +224,18 @@ const Header: React.FC = () => {
               <span>{link.label}</span>
               </a>
               {link.subLinks && (
-              <div 
-                className="
-                mt-4 space-y-3
-                opacity-0 group-hover:opacity-100
-                transition-opacity duration-300 ease-in-out
-                pointer-events-none group-hover:pointer-events-auto
-                "
-              >
+                <div className="mt-4 space-y-2">
                 {link.subLinks.map((subLink) => (
-                <a
+                  <a
                   key={subLink.href}
                   href={subLink.href}
-                  className="
-                  block text-lg text-gray-300 
-                  hover:text-blue-300 transition-colors
-                  "
+                  className="block text-white hover:text-blue-400"
                   onClick={toggleMenu}
-                >
+                  >
                   {subLink.label}
-                </a>
+                  </a>
                 ))}
-              </div>
+                </div>
               )}
             </div>
           ))}
