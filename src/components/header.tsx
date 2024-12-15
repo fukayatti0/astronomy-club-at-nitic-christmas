@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Image } from "@unpic/react";
 import LogoBlackImage from "/public/Logo-black.webp?url";
 import LogoWhiteImage from "/public/Logo-white.webp?url";
-import { Menu, X, Home, Calendar, Users } from "lucide-react";
+import { Menu, X, Home, Calendar, Users, BookOpenCheck } from "lucide-react";
 
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -62,6 +62,7 @@ const Header: React.FC = () => {
         { href: "/Event/Stargazing", label: "Stargazing" },
       ],
     },
+    { href: "/Event/Quiz", label: "Quiz", icon: BookOpenCheck },
     { href: "/About", label: "About Us", icon: Users },
   ];
 
