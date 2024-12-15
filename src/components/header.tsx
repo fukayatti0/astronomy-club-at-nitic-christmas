@@ -62,7 +62,7 @@ const Header: React.FC = () => {
         { href: "/Event/Stargazing", label: "Stargazing" },
       ],
     },
-    { href: "/Event/Quiz", label: "Quiz", icon: BookOpenCheck },
+    { href: "/Quiz", label: "Quiz", icon: BookOpenCheck },
     { href: "/About", label: "About Us", icon: Users },
   ];
 

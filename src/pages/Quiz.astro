@@ -1,0 +1,83 @@
+---
+import Layout from "../layouts/ChristmasLayout.astro";
+import "animate.css";
+import AstroChristmasBackground from "../components/AstroChristmasBackground";
+
+const quizCategories = [
+    {
+        title: "クリスマスクイズ",
+        description: "クリスマスにまつわる豆知識クイズ！",
+        link: "/Quiz/Christmas",
+        emoji: "🎄"
+    },
+    {
+        title: "ワークショップ関連クイズ",
+        description: "ワークショップに関するクイズに挑戦しよう！",
+        link: "/Quiz/Workshop",
+        emoji: "🛠️"
+    },
+    {
+        title: "サイエンスショークイズ",
+        description: "サイエンスショーに関する面白いクイズに挑戦しよう！",
+        link: "/Quiz/ScienceShow",
+        emoji: "🔬"
+    },
+    {
+        title: "冬の星空クイズ",
+        description: "冬の星空についての知識を試そう！",
+        link: "/Quiz/WinterSky",
+        emoji: "🌌"
+    }
+];
+---
+
+<Layout title="クイズ一覧">
+    <AstroChristmasBackground client:only>
+        <main class="container mx-auto px-4 py-8">
+            <h1 class="text-4xl font-bold text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-green-500">
+                クイズコーナー
+            </h1>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {
+                    quizCategories.map((category) => (
+                        <a
+                            href={category.link}
+                            class="bg-white/80 rounded-lg p-6 shadow-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl border-2 border-green-500 animate__animated animate__fadeIn"
+                        >
+                            <div class="text-center">
+                                <span class="text-4xl mb-4 block">{category.emoji}</span>
+                                <h2 class="text-2xl font-bold mb-4 bg-gradient-to-r from-red-500 to-green-500 bg-clip-text text-transparent">
+                                    {category.title}
+                                </h2>
+                                <p class="text-gray-700">{category.description}</p>
+                            </div>
+                        </a>
+                    ))
+                }
+            </div>
+        </main>
+    </AstroChristmasBackground>
+</Layout>
+
+<style>
+    a:hover {
+        text-decoration: none;
+    }
+    a {
+        position: relative;
+        overflow: hidden;
+    }
+    a::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.2);
+        transition: left 0.5s;
+    }
+    a:hover::before {
+        left: 100%;
+    }
+</style>
