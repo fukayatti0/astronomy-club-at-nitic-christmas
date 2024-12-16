@@ -1,0 +1,38 @@
+---
+interface Props {
+  title: string
+  description?: string
+  formUrl: string
+}
+
+const props: Props = {
+  title: '冬の星空クイズ',
+  description: 'クリスマスと天文学に関するクイズ',
+  formUrl:
+    'https://docs.google.com/forms/d/e/1FAIpQLSdHHXAZtr2XjAye4rSy-EcuZvfHCiyH66BA59ql-lAic3PcQg/viewform?embedded=true',
+}
+
+import Layout from '../../layouts/ChristmasLayout.astro'
+
+const { title, description, formUrl } = props
+---
+
+<Layout title="冬の星空クイズ">
+  <body>
+    <div class="min-h-screen font-sawarabi">
+      <main class="container mx-auto px-6 pt-20">
+        <section class="mb-12 text-center">
+          <h1 class="mb-4 text-5xl font-bold">{title}</h1>
+          {description && <p class="text-xl text-gray-700">{description}</p>}
+        </section>
+        <section class="flex justify-center">
+          <div class="w-full rounded-xl">
+            <iframe src={formUrl} class="h-[1500px] w-full rounded-xl">
+              読み込んでいます...
+            </iframe>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</Layout>
