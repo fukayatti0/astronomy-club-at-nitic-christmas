@@ -1,28 +1,28 @@
 ---
-import Layout from "../../layouts/StarryLayout.astro";
-import "animate.css";
+import Layout from '../../layouts/StarryLayout.astro'
+import 'animate.css'
 ---
 
 <Layout title="星空のクリスマス">
-  <div class="container mx-auto px-4 py-10 relative z-10">
+  <div id="content" class="container relative z-10 mx-auto px-4 py-10">
     <div
-      class="p-6 bg-white/80 rounded-lg shadow-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl border-2 border-green-500 animate__animated animate__fadeIn"
+      class="animate__animated animate__fadeIn transform rounded-lg border-2 border-green-500 bg-white/80 p-6 shadow-lg transition duration-500 hover:scale-105 hover:shadow-2xl"
     >
-      <h2 class="text-3xl font-bold mb-4 text-center">イベント詳細</h2>
+      <h2 class="mb-4 text-center text-3xl font-bold">イベント詳細</h2>
       <p class="mb-6 text-lg">
         このクリスマスイベントでは、星空観察や天文学に関する楽しいアクティビティを提供します。家族みんなで楽しめる内容です。
       </p>
-      <ul class="list-disc list-inside text-lg space-y-2">
+      <ul class="list-inside list-disc space-y-2 text-lg">
         <li>日時: 2024年12月21日 17:00〜</li>
         <li>場所: 茨城高専 1号館 屋上</li>
         <li>参加費: 無料</li>
       </ul>
     </div>
     <div
-      class="p-6 bg-white/80 rounded-lg shadow-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl border-2 border-green-500 mt-6 animate__animated animate__fadeIn"
+      class="animate__animated animate__fadeIn mt-6 transform rounded-lg border-2 border-green-500 bg-white/80 p-6 shadow-lg transition duration-500 hover:scale-105 hover:shadow-2xl"
     >
-      <h2 class="text-3xl font-bold mb-4 text-center">プログラム</h2>
-      <ol class="list-decimal list-inside text-lg space-y-2">
+      <h2 class="mb-4 text-center text-3xl font-bold">プログラム</h2>
+      <ol class="list-inside list-decimal space-y-2 text-lg">
         <li>オープニングセレモニー</li>
         <li>星空観察セッション</li>
         <li>天文学ワークショップ</li>
@@ -31,4 +31,24 @@ import "animate.css";
       </ol>
     </div>
   </div>
+
+  <button
+    id="toggleContent"
+    class="fixed bottom-4 right-4 z-20 rounded-lg bg-white/40 px-4 py-2 text-white hover:bg-black"
+  >
+    コンテンツ表示/非表示
+  </button>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const toggleButton = document.getElementById('toggleContent')
+      const content = document.getElementById('content')
+      if (toggleButton && content) {
+        toggleButton.addEventListener('click', () => {
+          content.style.display =
+            content.style.display === 'none' ? 'block' : 'none'
+        })
+      }
+    })
+  </script>
 </Layout>

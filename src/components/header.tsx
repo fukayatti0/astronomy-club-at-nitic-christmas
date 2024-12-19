@@ -114,6 +114,7 @@ const Header: React.FC = () => {
                   flex items-center space-x-2 
                   hover:text-blue-400 transition-colors 
                   font-medium group-hover:text-blue-300
+                  hover:underline
                 "
               >
                 <link.icon size={18} />

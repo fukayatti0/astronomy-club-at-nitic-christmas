@@ -4,6 +4,8 @@ import suncatcher from "/public/images/workshop/suncatcher.webp";
 import { Image } from "astro:assets";
 import "animate.css";
 import handwarmer from "/public/images/workshop/handwarmer.webp"
+import EventButton from '../../components/EvnetButton.tsx'
+
 
 const events = [
   {
@@ -50,5 +52,6 @@ const events = [
           ))
         }
       </div>
+      <EventButton/>
     </main>
 </Layout>
